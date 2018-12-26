@@ -6,5 +6,4 @@ ENV_VAR
 **/env/development.js
 development.js
 package-lock.json
-.babelrc
 yarn.lock
