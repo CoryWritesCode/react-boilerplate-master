@@ -61,12 +61,17 @@ class Home extends Component {
   render() {
 
     var { value, chirps } = this.state;
-    console.log(chirps);
+    var eachChirp = Object.keys(chirps);
+    eachChirp.pop();
+    console.log(eachChirp);
 
+    // if (chirps.length == 0)
     return (
       <Fragment>
         <Form value={value} onClick={this.handleClick} onChange={this.handleChange} />
-        <Chirp chirps={chirps} />
+        {eachChirp.map((val) => {
+          <Chirp text={chirps[val].text} key={val.toString()} />
+        })}
       </Fragment>
     )
   }
