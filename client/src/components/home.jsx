@@ -71,7 +71,7 @@ class Home extends Component {
         <Fragment>
           {keys.map((val) => {
             let text = chirps[val].text;
-            <Chirp text={text} key={val.toString()} />
+            return <Chirp text={text} key={val.toString()} id={`${val.toString()}`} />
           })}
         </Fragment>
       </Fragment>
