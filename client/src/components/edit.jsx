@@ -62,27 +62,55 @@ class Edit extends Component {
     let button;
 
     if (this.state.value.length < 1) {
-      button = <button className="btn btn-outline-light" type="button" >Update Chirp</button>
+      button = <button
+                  className="btn btn-outline-light"
+                  type="button">
+                  Update Chirp
+                  </button>
     } else {
-      button = <button className="btn btn-outline-light" type="button" onClick={this.handleClick} >Update Chirp</button>
+      button = <button
+                  className="btn btn-outline-light"
+                  type="button"
+                  onClick={this.handleClick}>
+                  Update Chirp
+                  </button>
     }
 
     return (
-      <Fragment key={this.props.match.params.id}>
+      <Fragment
+        key={this.props.match.params.id}>
         <div
           className="card text-white bg-success mb-3"
-          style={{ margin: '20px', fontWeight: 'bold' }}>
-          <div className="card-body" style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <p className="card-text">{this.state.chirps.text}</p>
+          style={{
+            margin: '20px',
+            fontWeight: 'bold'
+            }}>
+          <div
+            className="card-body"
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between'
+              }}>
+            <p
+              className="card-text">
+              {this.state.chirps.text}
+              </p>
           </div>
-          <div className="input-group mb-3" style={{ paddingLeft: '20px', paddingRight: '20px'}}>
+          <div
+            className="input-group mb-3"
+            style={{
+              paddingLeft: '20px',
+              paddingRight: '20px'
+              }}>
             <input
               type="text"
               className="form-control"
               placeholder='Say Something!'
               onChange={this.handleChange}
-              value={this.state.value} ></input>
-            <div className="input-group-append">
+              value={this.state.value} >
+              </input>
+            <div
+              className="input-group-append">
               {button}
             </div>
           </div>

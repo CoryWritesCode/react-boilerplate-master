@@ -82,11 +82,18 @@ class Home extends Component {
 
     return (
       <Fragment>
-        <Form value={value} onClick={this.handleClick} onChange={this.handleChange} />
+        <Form
+          value={value}
+          onClick={this.handleClick}
+          onChange={this.handleChange} />
         <Fragment>
           {keys.map((val) => {
             let text = chirps[val].text;
-            return <Chirp text={text} key={val.toString()} id={`${val.toString()}`} details={ false }/>
+            return <Chirp
+                      text={text}
+                      key={val.toString()}
+                      id={`${val.toString()}`}
+                      details={ false }/>
           })}
         </Fragment>
       </Fragment>

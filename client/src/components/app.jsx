@@ -16,11 +16,25 @@ class Navigation extends Component {
         <Fragment>
             <Router>
                 <Fragment>
-                        <Link className="btn btn-dark" style={{ margin: '10px', display: 'inline-block' }} to="/">Home</Link>
+                        <Link
+                            className="btn btn-dark"
+                            style={{
+                                margin: '10px',
+                                display: 'inline-block'
+                                }}
+                            to="/">
+                            Home
+                            </Link>
                     <Switch>
-                        <Route exact path="/" component={ Home } />
-                        <Route exact path="/chirps/:id" component={ Details } />
-                        <Route exact path="/chirps/:id/edit" component={ Edit } />
+                        <Route
+                            exact path="/"
+                            component={ Home } />
+                        <Route
+                            exact path="/chirps/:id"
+                            component={ Details } />
+                        <Route
+                            exact path="/chirps/:id/edit"
+                            component={ Edit } />
                     </Switch>
                 </Fragment>
             </Router>
