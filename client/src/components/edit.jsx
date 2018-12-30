@@ -30,7 +30,7 @@ class Edit extends Component {
       value: ''
     });
 
-    this.props.history.replace('/');
+    this.props.history.goBack();
   }
 
   handleChange(e) {
