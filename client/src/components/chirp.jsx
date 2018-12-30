@@ -4,8 +4,13 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 function Chirp(props) {
   let link;
 
-  if (props.location == `chirps/${props.id}`) {
-    link = <Link className="btn btn-danger btn-outline-danger" style={{ margin: '10px' }}>Details</Link>
+  if (props.details == true) {
+    link = [
+      <div style={{ justifyContent: 'flex-end' }}>
+        <Link className="btn btn-outline-light" style={{ margin: '10px' }} to={`chirps/${props.id}/edit`}>Edit</Link>
+        <button className="btn btn-outline-light" style={{ margin: '10px' }} onClick={ props.onClick }>Delete</button>
+      </div>
+    ]
   } else {
     link = <Link className="btn btn-success btn-outline-light" style={{ margin: '10px' }} to={`chirps/${props.id}`}>Details</Link>
   }

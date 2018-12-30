@@ -1,14 +1,25 @@
 import React, { Fragment, Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router,  } from 'react-router-dom';
+import Chirp from './chirp';
 
 class Details extends Component {
 
   constructor(params) {
-    super(param)
+    super(params)
 
     this.state = {
-      chirp: {}
+      chirps: {}
     }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    fetch(`http://localhost:3000/api/chirps/${this.props.match.params.id}`, {
+      method: 'DELETE'
+    })
+
+    this.props.history.replace('/');
   }
 
   componentWillMount() {
@@ -19,7 +30,6 @@ class Details extends Component {
       })
       .then(
         (json) => {
-          console.log(json);
 
           this.setState({
             chirps: json,
@@ -33,7 +43,12 @@ class Details extends Component {
 
   render() {
     return (
-      <h1>hello</h1>
+      <Chirp
+        text={ this.state.chirps.text }
+        key={ this.props.match.params.id }
+        id={ this.props.match.params.id }
+        details={ true }
+        onClick={ this.handleClick } />
     )
   }
 }
