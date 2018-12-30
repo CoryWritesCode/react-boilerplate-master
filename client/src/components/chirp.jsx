@@ -6,8 +6,8 @@ function Chirp(props) {
 
   if (props.details == true) {
     link = [
-      <div style={{ justifyContent: 'flex-end' }}>
-        <Link className="btn btn-outline-light" style={{ margin: '10px' }} to={`chirps/${props.id}/edit`}>Edit</Link>
+      <div style={{ justifyContent: 'flex-end' }} key="lKey">
+        <Link className="btn btn-outline-light" style={{ margin: '10px' }} to={`${props.id}/edit`}>Edit</Link>
         <button className="btn btn-outline-light" style={{ margin: '10px' }} onClick={ props.onClick }>Delete</button>
       </div>
     ]
@@ -17,13 +17,13 @@ function Chirp(props) {
 
   return (
     <Fragment>
-      <div className="card text-white bg-success mb-3" style={{ margin: '20px', fontWeight: 'bold' }}>
+      <div
+        className="card text-white bg-success mb-3"
+        style={{ margin: '20px', fontWeight: 'bold' }}>
         <div className="card-body" style={{ display: 'flex', justifyContent: 'space-between' }}>
           <p className="card-text">{props.text}</p>
           { link }
         </div>
-        <Fragment>
-        </Fragment>
       </div>
     </Fragment>
   )

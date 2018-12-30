@@ -4,9 +4,9 @@ function Form(props) {
   let button;
 
   if (props.value.length < 1) {
-    button = <button className="btn btn-outline-dark" type="button" >Chirp!</button>
+    button = <button className="btn btn-outline-dark" type="button" >Chirp</button>
   } else {
-    button = <button className="btn btn-outline-dark" type="button" onClick={props.onClick} >Chirp!</button>
+    button = <button className="btn btn-outline-dark" type="button" onClick={props.onClick} >Chirp</button>
   }
 
   return (

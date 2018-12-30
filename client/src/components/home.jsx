@@ -53,7 +53,6 @@ class Home extends Component {
     this.setState({
       value: e.target.value
     });
-
   }
 
   componentWillMount() {
